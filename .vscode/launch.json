@@ -7,22 +7,19 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "es5 Program",
+            "name": "es5",
             "program": "${workspaceFolder}/lib/es5_index.js"
         },
         {
             "type": "node",
             "request": "launch",
-            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/babel-node",
-            "runtimeArgs": [
-                "--inspect=1234",
-                "--debug-brk"
-            ],
-            "port": 1234,
-            "name": "es6 launch Program",
-            "program": "${workspaceFolder}/lib/index.js",
+            "name": "es6 Launch Program",
+            "program": "${workspaceRoot}/dist/es6_index.js",
             "cwd": "${workspaceRoot}",
-            "internalConsoleOptions": "openOnSessionStart"
+            "preLaunchTask": "build",
+            "outFiles": [
+                "${workspaceRoot}/lib/**.js"
+            ]
         }
     ]
 }
